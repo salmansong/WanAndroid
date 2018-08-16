@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.charliesong.wanandroid.widget.EditTextRightClear xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/et_input"
+    android:singleLine="true"
+    android:imeOptions="actionSearch"
+    android:hint="输入关键字，多个以空格隔开"
+    android:drawableRight="@mipmap/edit_clear"
+    android:paddingRight="10dp"
+    android:layout_height="match_parent">
+
+</com.charliesong.wanandroid.widget.EditTextRightClear>

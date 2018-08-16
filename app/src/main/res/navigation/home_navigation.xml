@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@+id/fragmentAlpha"
+    xmlns:tools="http://schemas.android.com/tools">
+    <action android:id="@+id/action_go_alpha"
+        app:launchSingleTop="true"
+        app:popUpToInclusive="false"
+        app:destination="@id/fragmentAlpha"/>
+<fragment
+    android:id="@+id/fragmentAlpha"
+    tools:layout="@layout/fragment_alpha"
+    android:name="com.charliesong.wanandroid.home.AlphaFragment"/>
+
+    <action android:id="@+id/action_go_navigation"
+        app:launchSingleTop="true"
+        app:popUpToInclusive="false"
+        app:destination="@id/fragmentNavigation"/>
+    <fragment android:id="@+id/fragmentNavigation"
+        android:name="com.charliesong.wanandroid.home.ByCatalogFragment"
+        tools:layout="@layout/fragment_navigation"/>
+
+    <fragment android:id="@+id/fragmentProjects"
+        android:name="com.charliesong.wanandroid.home.ProjectsFragment"
+        tools:layout="@layout/fragment_projects"/>
+    <action android:id="@+id/action_go_projects"
+        app:launchSingleTop="true"
+        app:popUpToInclusive="false"
+        app:destination="@id/fragmentProjects"/>
+</navigation>
