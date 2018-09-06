@@ -94,13 +94,18 @@ class ActivityLogin : BaseActivity(), LoginContract.View {
             }
         })
     }
+
+    override fun onDestroy() {
+        lastAnimator?.cancel()
+        super.onDestroy()
+    }
     var lastAnimator:ValueAnimator?=null
     private fun startUIAnimator(softInputShow: Boolean) {
         lastAnimator?.cancel()
         ValueAnimator.ofFloat(0f, 1f)
                 .apply {
                     lastAnimator=this;
-                    duration = 500
+                    duration = 300
                     addListener(object : AnimatorListenerAdapter() {
                         override fun onAnimationEnd(animation: Animator?) {
                             super.onAnimationEnd(animation)

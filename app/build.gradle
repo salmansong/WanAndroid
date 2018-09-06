@@ -67,5 +67,4 @@ dependencies {
 //    androidTestImplementation 'androidx.test:runner:1.1.0-alpha3'
 //    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha3'
 //    implementation 'androidx.core:core-ui:+'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
 }

@@ -4,4 +4,6 @@
 
     <string name="txt_login_in">登录</string>
     <string name="txt_login_out">登出</string>
+
+    <string name="test"><![CDATA[222<font color="#ff0000"> 第2个 </font>222 ]]></string>
 </resources>

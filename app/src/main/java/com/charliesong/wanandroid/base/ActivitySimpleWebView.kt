@@ -82,7 +82,7 @@ open class ActivitySimpleWebView : BaseActivity() {
                 super.onProgressChanged(view, newProgress)
                 pb?.apply {
                     setProgress(newProgress)
-                    visibility = if (newProgress >= 99) View.GONE else View.VISIBLE
+                    visibility = if (newProgress >= 90) View.GONE else View.VISIBLE
                 }
             }
         }

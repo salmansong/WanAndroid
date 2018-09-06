@@ -23,6 +23,7 @@ class PresenterLogin(val viewLogin: LoginContract.View) : LoginContract.Presente
             viewLogin.loginFailed(check)
             return
         }
+        viewLogin.showLoading()
         MyAPIManager.getAPI().login(userName, password).subscribeOn(Schedulers.io())
                 .compose(BaseFunction.handle())
                 .subscribe({
@@ -30,6 +31,8 @@ class PresenterLogin(val viewLogin: LoginContract.View) : LoginContract.Presente
                     viewLogin.loginSuccess()
                 }, {
                     viewLogin.loginFailed(it.message + "")
+                },{
+                    viewLogin.hiddenLoading()
                 })
 
     }
@@ -57,6 +60,7 @@ class PresenterLogin(val viewLogin: LoginContract.View) : LoginContract.Presente
             viewLogin.registerFailed(check)
             return
         }
+        viewLogin.showLoading()
         MyAPIManager.getAPI().register(userName, password, password2)
                 .compose(BaseFunction.handle())
                 .subscribe({
@@ -64,6 +68,8 @@ class PresenterLogin(val viewLogin: LoginContract.View) : LoginContract.Presente
                     viewLogin.registerSuccess()
                 }, {
                     viewLogin.registerFailed(it.message + "")
+                },{
+                    viewLogin.hiddenLoading()
                 })
     }
 }

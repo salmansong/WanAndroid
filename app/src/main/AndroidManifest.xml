@@ -23,7 +23,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".home.HomeActivity">
+        <activity android:name=".home.HomeActivity"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
@@ -36,9 +37,31 @@
         <activity android:name=".collectioin.ActivityMyCollection" />
         <activity android:name=".setting.ActivityWebsites" />
         <activity android:name=".search.SearchActivity"
-            android:windowSoftInputMode="stateHidden|adjustPan"/>
-        <activity android:name=".setting.HotNavigationActivity"/>
+            android:windowSoftInputMode="stateHidden|adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="market"
+                    android:host="com.test.test"
+                    android:path="/abcd" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".setting.HotNavigationActivity"
+            android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="market"
+                    android:host="com.test.test"
+                    android:path="/abc" />
+            </intent-filter>
+        </activity>
         <activity android:name=".setting.TestActivity"/>
+        <activity android:name=".ActivityTestzip"/>
     </application>
 
 </manifest>

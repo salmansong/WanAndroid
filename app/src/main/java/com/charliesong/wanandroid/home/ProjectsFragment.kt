@@ -8,6 +8,7 @@ import android.graphics.Color
 import android.graphics.Rect
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.ActionMenuView
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -76,6 +77,23 @@ class ProjectsFragment : FragmentAbsAlpha() {
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.menu_close_open, menu)
+//        toolbar.viewTreeObserver.addOnGlobalLayoutListener(object :ViewTreeObserver.OnGlobalLayoutListener{
+//            override fun onGlobalLayout() {
+//                println("toolbar===========count=${toolbar.childCount}")
+//                repeat(toolbar.childCount){
+//                    println("${it}================${toolbar.getChildAt(it)}")
+//                    var view=toolbar.getChildAt(it)
+//                    if(view is ActionMenuView){
+//                        println("menu========="+view.childCount)
+//                        repeat(view.childCount){
+//                            view.getChildAt(it).setOnLongClickListener(null)
+//                        }
+//                    }
+//                }
+//                activity?.findViewById<View>(R.id.action_choose)?.setOnLongClickListener(null)
+//                toolbar.viewTreeObserver.removeOnGlobalLayoutListener(this)
+//            }
+//        })
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -113,6 +131,7 @@ class ProjectsFragment : FragmentAbsAlpha() {
         }
         handelRvTree()
         getTreeData()
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -128,7 +147,6 @@ class ProjectsFragment : FragmentAbsAlpha() {
         }
         return super.onOptionsItemSelected(item)
     }
-
     var countDownLatch = CountDownLatch(1)
     private fun handelRvTree() {
         rv_type.apply {

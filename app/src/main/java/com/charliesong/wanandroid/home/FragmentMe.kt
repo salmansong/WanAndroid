@@ -31,6 +31,7 @@ class FragmentMe : FragmentBase() {
         items.add(MeItem("热门导航",R.mipmap.icon_red_url,HotNavigationActivity::class.java))
         items.add(MeItem("测试页面",R.mipmap.icon_red_star_collect,TestActivity::class.java))
         items.add(MeItem("测试百度",R.mipmap.icon_red_star_collect,ArticleDetailActivity::class.java))
+        items.add(MeItem("测试",R.mipmap.icon_red_star_collect,ActivityTestzip::class.java))
 //        repeat(21) {
 //            items.add(MeItem("测试item$it", R.mipmap.setting,ActivityLogin::class.java))
 //        }
